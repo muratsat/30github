@@ -11,5 +11,8 @@ OUTPUT="$(date +%Y-%m-%d).png"
 # get script location
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo "$SCRIPT_DIR/.venv/bin/python $SCRIPT_DIR/make_screenshot.py --output $SCRIPT_DIR/$OUTPUT"
+$SCRIPT_DIR/.venv/bin/python $SCRIPT_DIR/make_screenshot.py --output $SCRIPT_DIR/$OUTPUT
 
+git add .
+git commit -m "Daily screenshot at $(date +%Y-%m-%d)" 
+git push
