@@ -14,6 +14,5 @@ parser.add_argument("--output", type=str, default="screenshot.png")
 args = parser.parse_args()
 
 if __name__ == '__main__':
-    # take_screenshot('https://github.com/muratsat/30github', output_path=args.output)
-    print(args.output)
+    take_screenshot('https://github.com/muratsat/30github', output_path=args.output)
 
