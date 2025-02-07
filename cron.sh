@@ -6,12 +6,14 @@
 # This script is meant to be run from the crontab.
 #
 
-OUTPUT="screenshots/$(date +%Y-%m-%d).png"
+OUTPUT="$(date +%Y-%m-%d).png"
 
 # get script location
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-$SCRIPT_DIR/.venv/bin/python $SCRIPT_DIR/make_screenshot.py --output $SCRIPT_DIR/$OUTPUT
+mkdir -p $SCRIPT_DIR/screenshots
+
+$SCRIPT_DIR/.venv/bin/python $SCRIPT_DIR/make_screenshot.py --output $SCRIPT_DIR/screenshots/$OUTPUT
 
 git add .
 git commit -m "Daily screenshot at $(date +%Y-%m-%d)" 
