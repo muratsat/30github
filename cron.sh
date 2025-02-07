@@ -15,6 +15,8 @@ mkdir -p $SCRIPT_DIR/screenshots
 
 $SCRIPT_DIR/.venv/bin/python $SCRIPT_DIR/make_screenshot.py --output $SCRIPT_DIR/screenshots/$OUTPUT
 
+cd $SCRIPT_DIR
+
 git add .
 git commit -m "Daily screenshot at $(date +%Y-%m-%d)" 
 git push
